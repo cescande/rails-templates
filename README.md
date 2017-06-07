@@ -182,11 +182,6 @@ gem 'therubyracer'
 ```YAML
 # wercker.yml
 
-# This references the default Ruby container from
-# the Docker Hub.
-# https://registry.hub.docker.com/_/ruby/
-# If you want to use a specific version you would use a tag:
-# ruby:2.2.2
 box: ruby:2.3.3
 
 # You can also use services such as databases. Read more on our dev center:
