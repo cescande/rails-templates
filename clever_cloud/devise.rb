@@ -216,7 +216,7 @@ tmp/*
 public/assets
 TXT
 
-  # Devie install + user
+  # Devise install + user
   ########################################
   generate('devise:install')
   generate('devise', 'User')
@@ -230,6 +230,10 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 end
 RUBY
+
+  # Annotate
+  ########################################
+  generate('annotate:install')
 
   # migrate + devie views
   ########################################
@@ -275,10 +279,6 @@ production:
 EOF
     file 'application.yml', figaro_yml, force: true
   end
-
-  # Annotate
-  ########################################
-  generate('annotate:install')
 
   # Git
   ########################################

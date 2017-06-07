@@ -188,6 +188,10 @@ class ApplicationController < ActionController::Base
 end
 RUBY
 
+  # Annotate
+  ########################################
+  generate('annotate:install')
+
   # migrate + devise views
   ########################################
   rake 'db:migrate'
