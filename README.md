@@ -43,7 +43,6 @@ rails new \
 
 - Includes `Rubocop` with default configuration
 - Continuously run your tests with `guard`
-- Continuous integration with Wercker
 
 These templates are generated without a `test` folder (thanks to the `-T` flag). Starting from here, you can add Minitest & Capybara with the following procedure:
 
@@ -189,6 +188,8 @@ Style/SymbolArray:
 ```
 
 # CI with Wercker
+
+Continuous integration with Wercker
 
 ```ruby
 # wercker requirements
