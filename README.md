@@ -1,10 +1,12 @@
 # Rails Templates
 
-Quickly generate a rails app with the default [Wagon](http://www.lewagon.org) configuration
-using [Rails Templates](http://guides.rubyonrails.org/rails_application_templates.html).
+Quickly generate a rails app using [Rails Templates](http://guides.rubyonrails.org/rails_application_templates.html).
 
 
 ## Minimal
+
+*Improved [Le Wagon](http://www.lewagon.org) default configuration:*
+- Updated `gemfile` for `Rails 5.1.1`
 
 Get a minimal rails 5 app ready to be deployed on Heroku with Bootstrap, Simple form and debugging gems.
 
@@ -17,6 +19,10 @@ rails new \
 
 ## Devise
 
+*Improved [Le Wagon](http://www.lewagon.org) default configuration:*
+- Updated `gemfile` for `Rails 5.1.1`
+- Automaticaly `annotate` your models when running `rails db:migrate`
+
 Same as minimal **plus** a Devise install with a generated `User` model.
 
 
@@ -27,7 +33,17 @@ rails new \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
 
+## Semantic-UI
+
+**TO DO :** Same as Devise **without** Le Wagon's components **plus** `Semantic-UI` integration.
+
 # Testing
+
+*Improved [Le Wagon](http://www.lewagon.org) default configuration :*
+
+- Includes `Rubocop` with default configuration
+- Continuously run your tests with `guard`
+- Continuous integration with Wercker
 
 These templates are generated without a `test` folder (thanks to the `-T` flag). Starting from here, you can add Minitest & Capybara with the following procedure:
 
@@ -75,7 +91,8 @@ end
 ```
 
 ```bash
-bundle install
+$ bundle install
+$ guard init
 ```
 
 ```ruby
@@ -181,7 +198,6 @@ gem 'therubyracer'
 
 ```YAML
 # wercker.yml
-
 box: ruby:2.3.3
 
 # You can also use services such as databases. Read more on our dev center:
