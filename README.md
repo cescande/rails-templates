@@ -41,8 +41,9 @@ rails new \
 
 *Improved [Le Wagon](http://www.lewagon.org) default configuration :*
 
-- Includes `Rubocop` with default configuration
-- Continuously run your tests with `guard`
+- Includes `$ Rubocop` with default configuration
+- Continuously run your tests with `$ guard`
+- Perfomance monitoring with [Rack-mini-profiler](https://github.com/MiniProfiler/rack-mini-profiler)
 
 These templates are generated without a `test` folder (thanks to the `-T` flag). Starting from here, you can add Minitest & Capybara with the following procedure:
 
@@ -85,6 +86,8 @@ group :development, :test do
   gem 'launchy', require: false
   gem 'minitest-reporters'
 
+  gem 'rack-mini-profiler', require: false
+
   # [...]
 end
 ```
@@ -92,6 +95,35 @@ end
 ```bash
 $ bundle install
 $ guard init
+```
+
+```ruby
+# test/test_helper.rb
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../../config/environment', __FILE__)
+require 'rails/test_help'
+require 'minitest/reporters'
+Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new]
+
+class ActiveSupport::TestCase
+  fixtures :all
+end
+
+require 'capybara/rails'
+class ActionDispatch::IntegrationTest
+  include Capybara::DSL
+  def teardown
+    Capybara.reset_sessions!
+    Capybara.use_default_driver
+    Warden.test_reset!
+  end
+end
+
+require 'capybara/poltergeist'
+Capybara.default_driver = :poltergeist
+
+include Warden::Test::Helpers
+Warden.test_mode!
 ```
 
 ```ruby
@@ -124,32 +156,13 @@ end
 ```
 
 ```ruby
-# test/test_helper.rb
-ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
-require 'rails/test_help'
-require 'minitest/reporters'
-Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new]
+# config/initializers/rack_profiler.rb
+if Rails.env == 'development'
+  require 'rack-mini-profiler'
 
-class ActiveSupport::TestCase
-  fixtures :all
+  # initialization is skipped so trigger it
+  Rack::MiniProfilerRails.initialize!(Rails.application)
 end
-
-require 'capybara/rails'
-class ActionDispatch::IntegrationTest
-  include Capybara::DSL
-  def teardown
-    Capybara.reset_sessions!
-    Capybara.use_default_driver
-    Warden.test_reset!
-  end
-end
-
-require 'capybara/poltergeist'
-Capybara.default_driver = :poltergeist
-
-include Warden::Test::Helpers
-Warden.test_mode!
 ```
 
 ```YAML
