@@ -126,7 +126,7 @@ file 'app/views/shared/_flashes.html.erb', <<-HTML
 HTML
 
 run "curl -L https://raw.githubusercontent.com/lewagon/awesome-navbars/master/templates/_navbar_wagon.html.erb > app/views/shared/_navbar.html.erb"
-run "curl -L https://raw.githubusercontent.com/lewagon/design/master/logos/png/logo_red_circle.png > app/assets/images/logo.png"
+run "curl -L https://raw.githubusercontent.com/lewagon/rails-templates/master/logo.png > app/assets/images/logo.png"
 
 # README
 ########################################
