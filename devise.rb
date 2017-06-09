@@ -34,6 +34,7 @@ group :development, :test do
   gem 'spring'
   #{Rails.version >= "5" ? "gem 'listen', '~> 3.0.5'" : nil}
   #{Rails.version >= "5" ? "gem 'spring-watcher-listen', '~> 2.0.0'" : nil}
+  gem 'faker'
 end
 
 #{Rails.version < "5" ? "gem 'rails_12factor', group: :production" : nil}
