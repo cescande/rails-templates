@@ -307,11 +307,11 @@ test:
  HOST: 'localhost:3000'
 
 staging:
-  HOST: 'http://http://TODO_PUT_YOUR_DOMAIN_HERE-staging'
+  HOST: 'http://TODO_PUT_YOUR_DOMAIN_HERE-staging'
   EMAIL_RECIPIENTS: "TODO_STAGING@EXAMPLE.COM"
 
 production:
-  HOST: 'http://http://TODO_PUT_YOUR_DOMAIN_HERE'
+  HOST: 'http://TODO_PUT_YOUR_DOMAIN_HERE'
 ```
 
 ```ruby
