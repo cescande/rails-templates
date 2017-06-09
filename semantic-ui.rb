@@ -163,9 +163,10 @@ public/assets
 TXT
 
   # simple_form initializer x semantic-ui
+  # see https://medium.com/@pranav7/integrating-rails-simple-form-with-semantic-ui-c2b40e917b27
   ########################################
   run 'rm config/initializers/simple_form.rb'
-  run "curl -L https://gist.githubusercontent.com/adesurirey/8f972dc6a4ccf8f60219239c1037bc6c/raw/47824bfdb28715af20fcd77b555cfa255768e0ea/simple_form.rb > config/initializers/simple_form.rb"
+  run "curl -L https://gist.githubusercontent.com/pranav7/996f917c6372dbbd98c0d38c85158b9b/raw/8ae574009f661a109112f123eec9bc4d756ef514/simple_form.rb > config/initializers/simple_form.rb"
 
 
   # Devise install + user

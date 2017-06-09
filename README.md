@@ -37,16 +37,16 @@ rails new \
 
 Same as Devise **with** [Semantic UI](https://semantic-ui.com/) full integration.
 
-**Included:**
-- Semantic UI flashes
-- Custom `simple_form` initializer for Semantic UI
-
 ```bash
 rails new \
   -T --database postgresql \
   -m https://raw.githubusercontent.com/adesurirey/rails-templates/master/semantic-ui.rb \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
+
+**Included:**
+- Semantic UI flashes
+- Custom `simple_form` initializer for Semantic UI
 
 **Tip:**
 
