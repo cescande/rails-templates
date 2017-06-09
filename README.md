@@ -33,6 +33,8 @@ rails new \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
 
+Devise additional translations [here](https://github.com/plataformatec/devise/wiki/I18n)
+
 ## Semantic-UI
 
 **TO DO :** Same as Devise **without** Le Wagon's components **plus** `Semantic-UI` integration.
