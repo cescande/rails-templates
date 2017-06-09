@@ -162,7 +162,13 @@ tmp/*
 public/assets
 TXT
 
-  # Devie install + user
+  # simple_form initializer x semantic-ui
+  ########################################
+  run 'rm config/initializers/simple_form.rb'
+  run "curl -L https://gist.githubusercontent.com/adesurirey/8f972dc6a4ccf8f60219239c1037bc6c/raw/47824bfdb28715af20fcd77b555cfa255768e0ea/simple_form.rb > config/initializers/simple_form.rb"
+
+
+  # Devise install + user
   ########################################
   generate('devise:install')
   generate('devise', 'User')
