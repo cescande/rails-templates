@@ -5,10 +5,10 @@ Quickly generate a rails app using [Rails Templates](http://guides.rubyonrails.o
 
 ## Minimal
 
+Get a minimal rails 5 app ready to be deployed on Heroku with Bootstrap, Simple form and debugging gems.
+
 *Improved [Le Wagon](http://www.lewagon.org) default configuration:*
 - Updated `gemfile` for `Rails 5.1.1`
-
-Get a minimal rails 5 app ready to be deployed on Heroku with Bootstrap, Simple form and debugging gems.
 
 ```bash
 rails new \
@@ -19,13 +19,12 @@ rails new \
 
 ## Devise
 
+Same as minimal **plus** a Devise install with a generated `User` model.
+
 *Improved [Le Wagon](http://www.lewagon.org) default configuration:*
 - Updated `gemfile` for `Rails 5.1.1`
 - Automaticaly `annotate` your models when running `rails db:migrate`
 - Include `faker` for nice seeds
-
-Same as minimal **plus** a Devise install with a generated `User` model.
-
 
 ```bash
 rails new \
@@ -33,13 +32,16 @@ rails new \
   -m https://raw.githubusercontent.com/adesurirey/rails-templates/master/devise.rb \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
-**Tips:**
+**Tip:**
 
-- Devise additional translations [here](https://github.com/plataformatec/devise/wiki/I18n)
+Devise additional translations [here](https://github.com/plataformatec/devise/wiki/I18n)
 
 ## Semantic-UI 🎉
 
 Same as Devise **with** [Semantic UI](https://semantic-ui.com/) full integration.
+
+- Semantic UI flashes
+- Custom `simple_form` initializer for Semantic UI
 
 ```bash
 rails new \
@@ -48,15 +50,9 @@ rails new \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
 
-**Included:**
-- Semantic UI flashes
-- Custom `simple_form` initializer for Semantic UI
+**Tip:**
 
-**Tips:**
-
-- Devise additional translations [here](https://github.com/plataformatec/devise/wiki/I18n)
-
-- Use simple_form checkbox wrappers for great UI: 
+Use simple_form checkbox wrappers for great UI:
 
 ```ruby
 simple_form_for @user do |f|
