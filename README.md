@@ -5,10 +5,10 @@ Quickly generate a rails app using [Rails Templates](http://guides.rubyonrails.o
 
 ## Minimal
 
+Get a minimal rails 5 app ready to be deployed on Heroku with Bootstrap, Simple form and debugging gems.
+
 *Improved [Le Wagon](http://www.lewagon.org) default configuration:*
 - Updated `gemfile` for `Rails 5.1.1`
-
-Get a minimal rails 5 app ready to be deployed on Heroku with Bootstrap, Simple form and debugging gems.
 
 ```bash
 rails new \
@@ -19,13 +19,12 @@ rails new \
 
 ## Devise
 
+Same as minimal **plus** a Devise install with a generated `User` model.
+
 *Improved [Le Wagon](http://www.lewagon.org) default configuration:*
 - Updated `gemfile` for `Rails 5.1.1`
 - Automaticaly `annotate` your models when running `rails db:migrate`
 - Include `faker` for nice seeds
-
-Same as minimal **plus** a Devise install with a generated `User` model.
-
 
 ```bash
 rails new \
@@ -33,12 +32,55 @@ rails new \
   -m https://raw.githubusercontent.com/adesurirey/rails-templates/master/devise.rb \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
+**Tip:**
 
 Devise additional translations [here](https://github.com/plataformatec/devise/wiki/I18n)
 
-## Semantic-UI
+## Semantic-UI 🎉
 
-**TO DO :** Same as Devise **without** Le Wagon's components **plus** `Semantic-UI` integration.
+This is a beta template, feel free to participate and feedback !
+
+Same as Devise **with** [Semantic UI](https://semantic-ui.com/) full integration.
+
+- Semantic UI flashes
+- Custom `simple_form` initializer for Semantic UI
+
+```bash
+rails new \
+  -T --database postgresql \
+  -m https://raw.githubusercontent.com/adesurirey/rails-templates/master/semantic-ui.rb \
+  CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
+```
+
+**Responsive notice:**
+
+Semantic UI has responsive classes, however they're only applicable to grids, containers, rows and columns. Plus, there isn't any `mobile hidden`, `X hidden` class (like `hidden-xs` with Bootstrap).
+
+This template is using the same class names and same approach plus a bit more to reproduce it outside of containers and rows. You'll find the code in `app/assets/stylsheets/config/_screens.scss`, it's based on https://github.com/Semantic-Org/Semantic-UI/issues/1114
+
+You can use it like this:
+```html
+<body>
+   <a class="tablet or lower hidden" />
+   <b class="mobile tablet only" />
+</body>
+```
+
+**Tips:**
+
+- Use simple_form checkbox wrappers for great UI:
+
+```ruby
+simple_form_for @user do |f|
+  f.input :admin, wrapper: :ui_toggle_checkbox
+end
+```
+
+also availabe: `ui_slider_checkbox`
+
+- Use semantic-ui helpers
+  - Breadcrumbs: https://github.com/doabit/semantic-ui-sass#breadcrumbs-helper
+  - icons: https://github.com/doabit/semantic-ui-sass#icon-helper
 
 # Testing
 

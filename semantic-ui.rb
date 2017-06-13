@@ -19,8 +19,7 @@ gem 'redis'
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'
-gem 'bootstrap-sass'
-gem 'font-awesome-sass'
+gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 gem 'simple_form', github: 'elsurudo/simple_form', branch: 'rails-5.1.0'
 gem 'autoprefixer-rails'
 
@@ -34,7 +33,6 @@ group :development, :test do
   gem 'spring'
   #{Rails.version >= "5" ? "gem 'listen', '~> 3.0.5'" : nil}
   #{Rails.version >= "5" ? "gem 'spring-watcher-listen', '~> 2.0.0'" : nil}
-  gem 'faker'
 end
 
 #{Rails.version < "5" ? "gem 'rails_12factor', group: :production" : nil}
@@ -73,14 +71,14 @@ end
 # Assets
 ########################################
 run "rm -rf app/assets/stylesheets"
-run "curl -L https://github.com/lewagon/stylesheets/archive/master.zip > stylesheets.zip"
+run "curl -L https://github.com/adesurirey/rails-stylesheets/archive/master.zip > stylesheets.zip"
 run "unzip stylesheets.zip -d app/assets && rm stylesheets.zip && mv app/assets/rails-stylesheets-master app/assets/stylesheets"
 
 run 'rm app/assets/javascripts/application.js'
 file 'app/assets/javascripts/application.js', <<-JS
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-sprockets
+//= require semantic-ui
 //= require_tree .
 JS
 
@@ -104,29 +102,15 @@ file 'app/views/layouts/application.html.erb', <<-HTML
   </head>
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <%= semantic_flash %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
 HTML
 
-file 'app/views/shared/_flashes.html.erb', <<-HTML
-<% if notice %>
-  <div class="alert alert-info alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= notice %>
-  </div>
-<% end %>
-<% if alert %>
-  <div class="alert alert-warning alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= alert %>
-  </div>
-<% end %>
-HTML
-
-run "curl -L https://raw.githubusercontent.com/lewagon/awesome-navbars/master/templates/_navbar_wagon.html.erb > app/views/shared/_navbar.html.erb"
+# Navbar
+run "curl -L https://gist.githubusercontent.com/adesurirey/15488eadd6cef9988f223e7203043588/raw/f591c4d75ba17406b237d55a379e80faf5a9eab2/semantic_navbar.html.erb > app/views/shared/_navbar.html.erb"
 run "curl -L https://raw.githubusercontent.com/lewagon/rails-templates/master/logo.png > app/assets/images/logo.png"
 
 # README
@@ -154,7 +138,7 @@ after_bundle do
   # Generators: db + simple form + pages controller
   ########################################
   rake 'db:drop db:create db:migrate'
-  generate('simple_form:install', '--bootstrap')
+  generate('simple_form:install')
   generate(:controller, 'pages', 'home', '--no-helper', '--no-assets', '--skip-routes')
 
   # Routes
@@ -174,7 +158,14 @@ tmp/*
 public/assets
 TXT
 
-  # Devie install + user
+  # simple_form initializer x semantic-ui
+  # see https://medium.com/@pranav7/integrating-rails-simple-form-with-semantic-ui-c2b40e917b27
+  ########################################
+  run 'rm config/initializers/simple_form.rb'
+  run "curl -L https://gist.githubusercontent.com/pranav7/996f917c6372dbbd98c0d38c85158b9b/raw/8ae574009f661a109112f123eec9bc4d756ef514/simple_form.rb > config/initializers/simple_form.rb"
+
+
+  # Devise install + user
   ########################################
   generate('devise:install')
   generate('devise', 'User')
