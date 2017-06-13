@@ -41,8 +41,9 @@ This is a beta template, feel free to participate and feedback !
 Same as Devise **with** [Semantic UI](https://semantic-ui.com/) full integration.
 
 - Semantic components
-- Custom `simple_form` initializer for Semantic UI
+- Custom `simple_form` initializer
 - Visibility helpers
+- `JS` initializers
 
 ```bash
 rails new \
@@ -53,7 +54,7 @@ rails new \
 
 ### Notice:
 
-#### Responsive classes:
+#### Visibility helpers:
 
 Semantic UI has responsive classes, however they're only applicable to grids, containers, rows and columns. Plus, there isn't any `mobile hidden`, `X hidden` class (like `hidden-xs` with Bootstrap).
 
@@ -72,6 +73,10 @@ You can use it like this:
 All Semantic-UI `JS` must be initialized in `app/assets/javascripts/semantic_initializers.js`
 
 Look for `Usage` tabs in [Semantic-UI documentation](https://semantic-ui.com/introduction/getting-started.html) to find the good ones.
+
+#### Overide Semantic-UI Variables
+
+Right now all you can do is overiding Semantic-UI classes, and you're right, it's not very elegant. But you're very welcome to share other solutions.
 
 ### Tips:
 
