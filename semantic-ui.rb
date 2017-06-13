@@ -109,8 +109,8 @@ file 'app/views/layouts/application.html.erb', <<-HTML
 </html>
 HTML
 
-# TODO: create an semantic navbar repo and replace lines below
-run "curl -L https://raw.githubusercontent.com/lewagon/awesome-navbars/master/templates/_navbar_wagon.html.erb > app/views/shared/_navbar.html.erb"
+# Navbar
+run "curl -L https://gist.githubusercontent.com/adesurirey/15488eadd6cef9988f223e7203043588/raw/f591c4d75ba17406b237d55a379e80faf5a9eab2/semantic_navbar.html.erb > app/views/shared/_navbar.html.erb"
 run "curl -L https://raw.githubusercontent.com/lewagon/rails-templates/master/logo.png > app/assets/images/logo.png"
 
 # README
@@ -138,10 +138,6 @@ after_bundle do
   # Generators: db + simple form + pages controller
   ########################################
   rake 'db:drop db:create db:migrate'
-  # TODO: custom simple_form with semantic-ui
-  # see https://medium.com/@pranav7/integrating-rails-simple-form-with-semantic-ui-c2b40e917b27
-  # see https://github.com/deneuxa/simple_form_semantic-ui
-  # replace line below
   generate('simple_form:install')
   generate(:controller, 'pages', 'home', '--no-helper', '--no-assets', '--skip-routes')
 
