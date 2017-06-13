@@ -32,9 +32,7 @@ rails new \
   -m https://raw.githubusercontent.com/adesurirey/rails-templates/master/devise.rb \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
-**Tip:**
-
-Devise additional translations [here](https://github.com/plataformatec/devise/wiki/I18n)
+**Tip:** Devise additional translations [here](https://github.com/plataformatec/devise/wiki/I18n)
 
 ## Semantic-UI 🎉
 
@@ -52,7 +50,9 @@ rails new \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
 
-**Responsive notice:**
+**Notice:**
+
+- Responsive classes:
 
 Semantic UI has responsive classes, however they're only applicable to grids, containers, rows and columns. Plus, there isn't any `mobile hidden`, `X hidden` class (like `hidden-xs` with Bootstrap).
 
@@ -65,6 +65,12 @@ You can use it like this:
    <b class="mobile tablet only" />
 </body>
 ```
+
+- Javascript initializers:
+
+All Semantic-UI `JS` must be initialized in `app/assets/javascripts/semantic_initializers.js`
+
+Look for `Usage` tabs in [Semantic-UI documentation](https://semantic-ui.com/introduction/getting-started.html) to find the good ones.
 
 **Tips:**
 

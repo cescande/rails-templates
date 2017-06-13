@@ -82,6 +82,37 @@ file 'app/assets/javascripts/application.js', <<-JS
 //= require_tree .
 JS
 
+file 'app/assets/javascripts/semantic_initializers.js', <<-JS
+// All semantic JS you use must be initialized here
+// See "usage" tab in semantic-doc to find initializers
+
+// Dismisable message
+$('.message .close')
+  .on('click', function() {
+    $(this)
+      .closest('.message')
+      .transition('fade')
+    ;
+  })
+;
+
+// Dropdowns
+// See https://semantic-ui.com/modules/dropdown.html#/usage
+///////////////////////////////////////////////////////////
+// $('.ui.dropdown')
+//   .dropdown()
+// ;
+
+// Modal
+// See https://semantic-ui.com/modules/modal.html#/usage
+///////////////////////////////////////////////////////////
+// $('.ui.modal')
+//   .modal()
+// ;
+
+// Add your initializers here
+JS
+
 # Dev environment
 ########################################
 gsub_file('config/environments/development.rb', /config\.assets\.debug.*/, 'config.assets.debug = false')
