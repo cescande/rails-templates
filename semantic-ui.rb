@@ -110,6 +110,7 @@ file 'app/views/layouts/application.html.erb', <<-HTML
 HTML
 
 # Navbar
+run "mkdir app/views/shared"
 run "curl -L https://gist.githubusercontent.com/adesurirey/15488eadd6cef9988f223e7203043588/raw/f591c4d75ba17406b237d55a379e80faf5a9eab2/semantic_navbar.html.erb > app/views/shared/_navbar.html.erb"
 run "curl -L https://raw.githubusercontent.com/lewagon/rails-templates/master/logo.png > app/assets/images/logo.png"
 
@@ -213,5 +214,5 @@ RUBY
   ########################################
   git :init
   git add: "."
-  git commit: %Q{ -m 'Initial commit with devise template from https://github.com/adesurirey/rails-templates' }
+  git commit: %Q{ -m 'Initial commit with Semantic-UI template from https://github.com/adesurirey/rails-templates' }
 end
