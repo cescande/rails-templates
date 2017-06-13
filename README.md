@@ -38,6 +38,8 @@ Devise additional translations [here](https://github.com/plataformatec/devise/wi
 
 ## Semantic-UI 🎉
 
+This is a beta template, feel free to participate and feedback !
+
 Same as Devise **with** [Semantic UI](https://semantic-ui.com/) full integration.
 
 - Semantic UI flashes
@@ -50,9 +52,23 @@ rails new \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
 
-**Tip:**
+**Responsive notice:**
 
-Use simple_form checkbox wrappers for great UI:
+Semantic UI has responsive classes, however they're only applicable to grids, containers, rows and columns. Plus, there isn't any `mobile hidden`, `X hidden` class (like `hidden-xs` with Bootstrap).
+
+This template is using the same class names and same approach plus a bit more to reproduce it outside of containers and rows. You'll find the code in `app/assets/stylsheets/config/_screens.scss`, it's based on https://github.com/Semantic-Org/Semantic-UI/issues/1114
+
+You can use it like this:
+```html
+<body>
+   <a class="tablet or lower hidden" />
+   <b class="mobile tablet only" />
+</body>
+```
+
+**Tips:**
+
+- Use simple_form checkbox wrappers for great UI:
 
 ```ruby
 simple_form_for @user do |f|
@@ -61,6 +77,10 @@ end
 ```
 
 also availabe: `ui_slider_checkbox`
+
+- Use semantic-ui helpers
+  - Breadcrumbs: https://github.com/doabit/semantic-ui-sass#breadcrumbs-helper
+  - icons: https://github.com/doabit/semantic-ui-sass#icon-helper
 
 # Testing
 
