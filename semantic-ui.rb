@@ -142,7 +142,7 @@ HTML
 
 # Navbar
 run "mkdir app/views/shared"
-run "curl -L https://gist.githubusercontent.com/adesurirey/15488eadd6cef9988f223e7203043588/raw/353920844cc306748f47a0286f5889c3e36d3c55/semantic_navbar.html.erb > app/views/shared/_navbar.html.erb"
+run "curl -L https://gist.githubusercontent.com/adesurirey/15488eadd6cef9988f223e7203043588/raw/898d51a067f8dcd467fd096b7b92db1480c26213/semantic_navbar.html.erb > app/views/shared/_navbar.html.erb"
 run "curl -L https://raw.githubusercontent.com/lewagon/rails-templates/master/logo.png > app/assets/images/logo.png"
 
 # README
