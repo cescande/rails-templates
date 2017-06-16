@@ -225,7 +225,7 @@ end
 ```YAML
 # .rubocop.yml
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: YOUR.RUBYVERSION
   Include:
     - '**/Rakefile'
     - '**/config.ru'
