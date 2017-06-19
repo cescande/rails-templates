@@ -12,7 +12,7 @@ Get a minimal rails 5 app ready to be deployed on Heroku with Bootstrap, Simple 
 
 ```bash
 rails new \
-  -T --database postgresql \
+  --database postgresql \
   -m https://raw.githubusercontent.com/adesurirey/rails-templates/master/minimal.rb \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
@@ -28,7 +28,7 @@ Same as minimal **plus** a Devise install with a generated `User` model.
 
 ```bash
 rails new \
-  -T --database postgresql \
+  --database postgresql \
   -m https://raw.githubusercontent.com/adesurirey/rails-templates/master/devise.rb \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
@@ -47,7 +47,7 @@ Same as Devise **with** [Semantic UI](https://semantic-ui.com/) full integration
 
 ```bash
 rails new \
-  -T --database postgresql \
+  --database postgresql \
   -m https://raw.githubusercontent.com/adesurirey/rails-templates/master/semantic-ui.rb \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
@@ -102,27 +102,7 @@ also availabe: `ui_slider_checkbox`
 - Continuously run your tests with `$ guard`
 - Perfomance monitoring with [Rack-mini-profiler](https://github.com/MiniProfiler/rack-mini-profiler)
 
-These templates are generated without a `test` folder (thanks to the `-T` flag). Starting from here, you can add Minitest & Capybara with the following procedure:
-
-```ruby
-# config/application.rb
-require "rails/test_unit/railtie" # Un-comment this line
-```
-
-```bash
-# In the terminal, run:
-folders=(controllers fixtures helpers integration mailers models)
-for dir in "${folders[@]}"; do mkdir -p "test/$dir" && touch "test/$dir/.keep"; done
-cat >test/test_helper.rb <<RUBY
-ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
-require 'rails/test_help'
-
-class ActiveSupport::TestCase
-  fixtures :all
-end
-RUBY
-```
+Starting from here, you can add Minitest & Capybara with the following procedure:
 
 ```bash
 brew install phantomjs  # on OSX only
@@ -151,7 +131,31 @@ end
 
 ```bash
 $ bundle install
-$ guard init
+$ bundle exec guard init
+```
+
+```ruby
+# Guardfile
+guard :minitest, spring: true do
+  # with Minitest::Unit
+  watch(%r{^test/(.*)\/?test_(.*)\.rb$})
+  watch(%r{^lib/(.*/)?([^/]+)\.rb$})     { |m| "test/#{m[1]}test_#{m[2]}.rb" }
+  watch(%r{^test/test_helper\.rb$})      { 'test' }
+
+  # with Minitest::Spec
+  # watch(%r{^spec/(.*)_spec\.rb$})
+  # watch(%r{^lib/(.+)\.rb$})         { |m| "spec/#{m[1]}_spec.rb" }
+  # watch(%r{^spec/spec_helper\.rb$}) { 'spec' }
+
+  # Rails 4
+  watch(%r{^app/(.+)\.rb$})                               { |m| "test/#{m[1]}_test.rb" }
+  watch(%r{^app/controllers/application_controller\.rb$}) { 'test/controllers' }
+  watch(%r{^app/controllers/(.+)_controller\.rb$})        { |m| "test/integration/#{m[1]}_test.rb" }
+  watch(%r{^app/views/(.+)_mailer/.+})                    { |m| "test/mailers/#{m[1]}_mailer_test.rb" }
+  watch(%r{^lib/(.+)\.rb$})                               { |m| "test/lib/#{m[1]}_test.rb" }
+  watch(%r{^test/.+_test\.rb$})
+  watch(%r{^test/test_helper\.rb$}) { 'test' }
+end
 ```
 
 ```ruby
@@ -181,35 +185,6 @@ Capybara.default_driver = :poltergeist
 
 include Warden::Test::Helpers
 Warden.test_mode!
-```
-
-```ruby
-# Guardfile
-guard :minitest, spring: true do
-  # with Minitest::Unit
-  watch(%r{^test/(.*)\/?test_(.*)\.rb$})
-  watch(%r{^lib/(.*/)?([^/]+)\.rb$})     { |m| "test/#{m[1]}test_#{m[2]}.rb" }
-  watch(%r{^test/test_helper\.rb$})      { 'test' }
-
-  # with Minitest::Spec
-  # watch(%r{^spec/(.*)_spec\.rb$})
-  # watch(%r{^lib/(.+)\.rb$})         { |m| "spec/#{m[1]}_spec.rb" }
-  # watch(%r{^spec/spec_helper\.rb$}) { 'spec' }
-
-  # Rails 4
-  watch(%r{^app/(.+)\.rb$})                               { |m| "test/#{m[1]}_test.rb" }
-  watch(%r{^app/controllers/application_controller\.rb$}) { 'test/controllers' }
-  watch(%r{^app/controllers/(.+)_controller\.rb$})        { |m| "test/integration/#{m[1]}_test.rb" }
-  watch(%r{^app/views/(.+)_mailer/.+})                    { |m| "test/mailers/#{m[1]}_mailer_test.rb" }
-  watch(%r{^lib/(.+)\.rb$})                               { |m| "test/lib/#{m[1]}_test.rb" }
-  watch(%r{^test/.+_test\.rb$})
-  watch(%r{^test/test_helper\.rb$}) { 'test' }
-
-  # Rails < 4
-  # watch(%r{^app/controllers/(.*)\.rb$}) { |m| "test/functional/#{m[1]}_test.rb" }
-  # watch(%r{^app/helpers/(.*)\.rb$})     { |m| "test/helpers/#{m[1]}_test.rb" }
-  # watch(%r{^app/models/(.*)\.rb$})      { |m| "test/unit/#{m[1]}_test.rb" }
-end
 ```
 
 ```ruby
