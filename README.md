@@ -324,7 +324,9 @@ Use [recipient_interceptor](https://github.com/croaky/recipient_interceptor) to 
 
 ```ruby
 # Gemfile
-gem 'recipient_interceptor'
+group :staging do
+  gem 'recipient_interceptor'
+end
 ```
 
 ```YML
