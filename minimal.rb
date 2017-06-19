@@ -22,9 +22,12 @@ gem 'font-awesome-sass'
 gem 'simple_form', github: 'elsurudo/simple_form', branch: 'rails-5.1.0'
 gem 'autoprefixer-rails'
 
+group :development do
+  gem 'web-console'
+end
+
 group :development, :test do
   gem 'binding_of_caller'
-  gem 'web-console'
   #{Rails.version >= "5" ? nil : "gem 'quiet_assets'"}
   gem 'pry-byebug'
   gem 'pry-rails'
