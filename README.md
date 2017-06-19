@@ -233,9 +233,6 @@ Metrics/BlockLength:
 TrailingCommaInLiteral:
   Enabled: false
 
-StringLiterals:
-  Enabled: false
-
 AsciiComments:
   Enabled: false
 
@@ -245,17 +242,23 @@ AlignParameters:
 Metrics/LineLength:
   Max: 100
 
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+
 Style/Lambda:
   Enabled: false
 
 Style/SignalException:
-  Enabled: false
+  EnforcedStyle: semantic
 
 Style/NumericLiteralPrefix:
   Enabled: false
 
 Style/NumericLiterals:
   Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
 
 Style/SymbolArray:
   Enabled: false
