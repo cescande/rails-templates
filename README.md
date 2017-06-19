@@ -189,7 +189,7 @@ Warden.test_mode!
 
 ```ruby
 # config/initializers/rack_profiler.rb
-if Rails.env == 'development'
+if Rails.env.development?
   require 'rack-mini-profiler'
 
   # initialization is skipped so trigger it
