@@ -24,7 +24,7 @@ gem 'autoprefixer-rails'
 
 group :development, :test do
   gem 'binding_of_caller'
-  gem 'better_errors'
+  gem 'web-console'
   #{Rails.version >= "5" ? nil : "gem 'quiet_assets'"}
   gem 'pry-byebug'
   gem 'pry-rails'
