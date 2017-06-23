@@ -239,6 +239,10 @@ AsciiComments:
 AlignParameters:
   Enabled: false
 
+Lint/EndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: variable
+
 Metrics/LineLength:
   Max: 100
 
