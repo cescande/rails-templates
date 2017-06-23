@@ -29,7 +29,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'annotate', git: 'https://github.com/ctran/annotate_models.git'
   gem 'binding_of_caller'
   #{Rails.version >= "5" ? nil : "gem 'quiet_assets'"}
   gem 'pry-byebug'
@@ -38,6 +37,11 @@ group :development, :test do
   #{Rails.version >= "5" ? "gem 'listen', '~> 3.0.5'" : nil}
   #{Rails.version >= "5" ? "gem 'spring-watcher-listen', '~> 2.0.0'" : nil}
   gem 'faker'
+end
+
+group :development do
+  gem 'web-console'
+  gem 'annotate'
 end
 
 #{Rails.version < "5" ? "gem 'rails_12factor', group: :production" : nil}
@@ -177,7 +181,11 @@ tmp/*
 public/assets
 TXT
 
-  # Devie install + user
+  # Annotate
+  ########################################
+  generate('annotate:install')
+
+  # Devise install + user
   ########################################
   generate('devise:install')
   generate('devise', 'User')
@@ -191,10 +199,6 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 end
 RUBY
-
-  # Annotate
-  ########################################
-  generate('annotate:install')
 
   # migrate + devise views
   ########################################

@@ -36,6 +36,11 @@ group :development, :test do
   #{Rails.version >= "5" ? "gem 'spring-watcher-listen', '~> 2.0.0'" : nil}
 end
 
+group :development do
+  gem 'web-console'
+  gem 'annotate'
+end
+
 #{Rails.version < "5" ? "gem 'rails_12factor', group: :production" : nil}
 RUBY
 
@@ -158,6 +163,10 @@ TXT
   ########################################
   run "bundle binstubs figaro"
   run "figaro install"
+
+  # Annotate
+  ########################################
+  generate('annotate:install')
 
   # Git
   ########################################
