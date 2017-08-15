@@ -179,7 +179,6 @@ TXT
       # development:
       #   HOST: 'localhost:3000' # This is not a secret value, I can write it.
       #
-      "
     HEREDOC
 
   # Annotate
