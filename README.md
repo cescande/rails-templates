@@ -25,6 +25,8 @@ Same as minimal **plus** a Devise install with a generated `User` model.
 - Updated `gemfile` for `Rails 5.1.1`
 - Automaticaly `annotate` your models when running `rails db:migrate`
 - Include `faker` for nice seeds
+- Add `application.sample.yml` which should contain the list of required keys, but NOT the secret values
+- Include `Rubocop` custom config 
 
 ```bash
 rails new \
@@ -52,7 +54,7 @@ rails new \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
 
-### Notice:
+### Semantic-UI Notice:
 
 #### Visibility helpers:
 
