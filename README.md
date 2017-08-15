@@ -239,6 +239,10 @@ AsciiComments:
 AlignParameters:
   Enabled: false
 
+Lint/EndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: variable
+
 Metrics/LineLength:
   Max: 100
 
@@ -335,10 +339,10 @@ end
 ```YML
 # application.yml
 development:
- HOST: 'localhost:3000'
+  HOST: 'localhost:3000'
 
 test:
- HOST: 'localhost:3000'
+  HOST: 'localhost:3000'
 
 staging:
   HOST: 'http://TODO_PUT_YOUR_DOMAIN_HERE-staging'
