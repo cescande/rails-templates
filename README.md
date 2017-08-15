@@ -24,9 +24,9 @@ Same as minimal **plus** a Devise install with a generated `User` model.
 *Improved [Le Wagon](http://www.lewagon.org) default configuration:*
 - Updated `gemfile` for `Rails 5.1.1`
 - Automaticaly `annotate` your models when running `rails db:migrate`
-- Include `faker` for nice seeds
-- Add `application.sample.yml` which should contain the list of required keys, but NOT the secret values
-- Include `Rubocop` custom config 
+- Includes `faker` for nice seeds
+- Includes `application.sample.yml` which should contain the list of required keys, but NOT the secret values
+- Includes `Rubocop` custom config
 
 ```bash
 rails new \
