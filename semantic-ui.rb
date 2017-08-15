@@ -23,10 +23,6 @@ gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 gem 'simple_form', github: 'elsurudo/simple_form', branch: 'rails-5.1.0'
 gem 'autoprefixer-rails'
 
-group :development do
-  gem 'web-console'
-end
-
 group :development, :test do
   gem 'binding_of_caller'
   #{Rails.version >= "5" ? nil : "gem 'quiet_assets'"}
