@@ -36,6 +36,7 @@ end
 group :development do
   gem 'web-console'
   gem 'annotate'
+  gem 'letter_opener_web'
 end
 
 #{Rails.version < "5" ? "gem 'rails_12factor', group: :production" : nil}
@@ -178,7 +179,13 @@ after_bundle do
 
   # Routes
   ########################################
-  route "root to: 'pages#home'"
+  route(
+    "root to: 'pages#home'
+
+    if Rails.env.development?
+      mount LetterOpenerWeb::Engine, at: '/letter_opener'
+    end"
+  )
 
   # Git ignore
   ########################################
@@ -236,6 +243,7 @@ RUBY
 
   # Environments
   ########################################
+  environment 'config.action_mailer.delivery_method = :letter_opener_web',  env: 'development'
   environment 'config.action_mailer.default_url_options = { host: "http://localhost:3000" }', env: 'development'
   environment 'config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }', env: 'production'
 
