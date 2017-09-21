@@ -27,6 +27,7 @@ Same as minimal **plus** a Devise install with a generated `User` model.
 - Includes `faker` for nice seeds
 - Includes `application.sample.yml` which should contain the list of required keys, but NOT the secret values
 - Includes `Rubocop` custom config
+- includes `letter_opener_web`
 
 ```bash
 rails new \
@@ -36,7 +37,7 @@ rails new \
 ```
 **Tip:** Devise additional translations [here](https://github.com/plataformatec/devise/wiki/I18n)
 
-## Semantic-UI 🎉
+## Semantic-UI
 
 This is a beta template, feel free to participate and feedback !
 
