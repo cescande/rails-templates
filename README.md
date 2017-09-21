@@ -8,7 +8,7 @@ Quickly generate a rails app using [Rails Templates](http://guides.rubyonrails.o
 Get a minimal rails 5 app ready to be deployed on Heroku with Bootstrap, Simple form and debugging gems.
 
 *Improved [Le Wagon](http://www.lewagon.org) default configuration:*
-- Updated `gemfile` for `Rails 5.1.1`
+- Updated `gemfile` for `> Rails 5.1.1`
 
 ```bash
 rails new \
@@ -22,7 +22,7 @@ rails new \
 Same as minimal **plus** a Devise install with a generated `User` model.
 
 *Improved [Le Wagon](http://www.lewagon.org) default configuration:*
-- Updated `gemfile` for `Rails 5.1.1`
+- Updated `gemfile` for `> Rails 5.1.1`
 - Automaticaly `annotate` your models when running `rails db:migrate`
 - Includes `faker` for nice seeds
 - Includes `application.sample.yml` which should contain the list of required keys, but NOT the secret values

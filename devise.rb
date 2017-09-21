@@ -163,9 +163,10 @@ after_bundle do
 
   # Routes
   ########################################
-  route "root to: 'pages#home'"
   route(
-    "if Rails.env.development?
+    "root to: 'pages#home'
+
+    if Rails.env.development?
       mount LetterOpenerWeb::Engine, at: '/letter_opener'
     end"
   )
