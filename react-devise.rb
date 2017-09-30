@@ -169,8 +169,8 @@ after_bundle do
 
   # Webpack + React
   ########################################
-  rails_command 'webpacker:install'
-  rails_command 'webpacker:install:react'
+  rails_command('webpacker:install')
+  rails_command('webpacker:install:react')
 
   # Routes
   ########################################
