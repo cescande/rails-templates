@@ -97,6 +97,70 @@ also availabe: `ui_slider_checkbox`
   - Breadcrumbs: https://github.com/doabit/semantic-ui-sass#breadcrumbs-helper
   - icons: https://github.com/doabit/semantic-ui-sass#icon-helper
 
+## React-Devise
+
+Same as Devise **plus** React setup.
+
+- Webpack + Yarn + React installed
+
+```bash
+rails new \
+  --webpack=react \
+  --database postgresql \
+  -m https://raw.githubusercontent.com/adesurirey/rails-templates/master/react-devise.rb \
+  CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
+```
+### React-Devise notice:
+
+Use `foreman` to launch rails server and webpack-dev-server
+
+```bash
+$ gem install foreman
+$ foreman start -f Procfile.dev -p 3000
+```
+
+Use `yarn` to add packages
+
+```bash
+$ yarn add <package>
+$ yarn add <dev-only-package> --dev
+```
+
+#### Starter architecture
+
+```bash
+app/javascript
+└── packs
+    ├── application.js
+    └── hello_react.js
+```
+
+To render the demo React component, you just need to replace the content of the file with:
+
+```ruby
+<%= javascript_pack_tag 'hello_react' %>
+```
+
+#### Redux architecture
+
+```bash
+app/javascript
+└── your_pack
+    └── actions
+    └── components
+    └── reducers
+    └── index.js
+└── packs
+    ├── application.js
+    └── your_pack.js
+```
+
+```js
+// your_pack.js
+
+import 'your_pack';
+```
+
 # Testing
 
 *Improved [Le Wagon](http://www.lewagon.org) default configuration :*
