@@ -5,12 +5,12 @@ Quickly generate a rails app using [Rails Templates](http://guides.rubyonrails.o
 **Templates:**
 - [Minimal template](https://github.com/adesurirey/rails-templates#minimal)
 
-- [Minimal+Devise template](https://github.com/adesurirey/rails-templates#devise)
-- [Minimal+Devise template with Semantic-ui](https://github.com/adesurirey/rails-templates#semantic-ui)
+- [Devise template](https://github.com/adesurirey/rails-templates#devise)
+- [Devise template with Semantic-ui](https://github.com/adesurirey/rails-templates#semantic-ui)
   - [Semantic-ui notice](https://github.com/adesurirey/rails-templates#semantic-ui-notice)
 
-- [React minimal template](https://github.com/adesurirey/rails-templates#react-minimal)
-- [React+Devise template](https://github.com/adesurirey/rails-templates#react-devise)
+- [Minimal + React template](https://github.com/adesurirey/rails-templates#react-minimal)
+- [Devise + React template](https://github.com/adesurirey/rails-templates#react-devise)
   - [React notice](https://github.com/adesurirey/rails-templates#react-notice)
 
 **Complementary setup:**
@@ -113,7 +113,7 @@ also availabe: `ui_slider_checkbox`
   - Breadcrumbs: https://github.com/doabit/semantic-ui-sass#breadcrumbs-helper
   - icons: https://github.com/doabit/semantic-ui-sass#icon-helper
 
-## React-minimal
+## Minimal + React
 
   Same as minimal **plus** React setup.
 
@@ -126,7 +126,7 @@ also availabe: `ui_slider_checkbox`
     CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
   ```
 
-## React-devise
+## Devise + React
 
 Same as devise **plus** React setup.
 
@@ -164,7 +164,7 @@ app/javascript
     └── hello_react.js
 ```
 
-To render the demo React component, you just need to replace the content of the file with:
+To render the demo React component just use helper:
 
 ```ruby
 <%= javascript_pack_tag 'hello_react' %>
