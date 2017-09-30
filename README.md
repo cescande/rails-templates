@@ -97,9 +97,22 @@ also availabe: `ui_slider_checkbox`
   - Breadcrumbs: https://github.com/doabit/semantic-ui-sass#breadcrumbs-helper
   - icons: https://github.com/doabit/semantic-ui-sass#icon-helper
 
-## React-Devise
+## React-minimal
 
-Same as Devise **plus** React setup.
+  Same as minimal **plus** React setup.
+
+  - Webpack + Yarn + React installed
+
+  ```bash
+  rails new \
+    --database postgresql \
+    -m https://raw.githubusercontent.com/adesurirey/rails-templates/master/react-minimal.rb \
+    CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
+  ```
+
+## React-devise
+
+Same as devise **plus** React setup.
 
 - Webpack + Yarn + React installed
 
@@ -109,7 +122,7 @@ rails new \
   -m https://raw.githubusercontent.com/adesurirey/rails-templates/master/react-devise.rb \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME
 ```
-### React-Devise notice:
+### React notice:
 
 Use `foreman` to launch rails server and webpack-dev-server
 
