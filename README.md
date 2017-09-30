@@ -2,6 +2,22 @@
 
 Quickly generate a rails app using [Rails Templates](http://guides.rubyonrails.org/rails_application_templates.html).
 
+*Templates:*
+- [Minimal template](https://github.com/adesurirey/rails-templates#minimal)
+
+- [Minimal+Devise template](https://github.com/adesurirey/rails-templates#devise)
+- [Minimal+Devise template with Semantic-ui](https://github.com/adesurirey/rails-templates#semantic-ui)
+  - [Semantic-ui notice](https://github.com/adesurirey/rails-templates#semantic-ui-notice)
+
+- [React minimal template](https://github.com/adesurirey/rails-templates#react-minimal)
+- [React+Devise template](https://github.com/adesurirey/rails-templates#react-devise)
+  - [React notice](https://github.com/adesurirey/rails-templates#react-notice)
+
+*Complementary setup:*
+- [Testing](https://github.com/adesurirey/rails-templates#testing)
+- [Continuous integration with Wercker](https://github.com/adesurirey/rails-templates#wercker)
+- [Staging setup](https://github.com/adesurirey/rails-templates#setup-staging)
+
 
 ## Minimal
 
