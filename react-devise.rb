@@ -174,14 +174,14 @@ after_bundle do
 
   # Routes
   ########################################
+  route("root to: 'pages#home'")
   route(
-    "root to: 'pages#home'
-
-    if Rails.env.development?
+    "if Rails.env.development?
       mount LetterOpenerWeb::Engine, at: '/letter_opener'
-    end
-
-    # Simple hack to get react-router over rails routes
+    end"
+  )
+  route(
+    "# Simple hack to get react-router over rails routes
     # get '*path', to: 'site#index'"
   )
 
