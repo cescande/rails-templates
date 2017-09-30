@@ -177,6 +177,7 @@ app/javascript
 └── your_pack
     └── actions
     └── components
+    └── containers
     └── reducers
     └── index.js
 └── packs
