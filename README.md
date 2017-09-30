@@ -2,7 +2,7 @@
 
 Quickly generate a rails app using [Rails Templates](http://guides.rubyonrails.org/rails_application_templates.html).
 
-*Templates:*
+**Templates:**
 - [Minimal template](https://github.com/adesurirey/rails-templates#minimal)
 
 - [Minimal+Devise template](https://github.com/adesurirey/rails-templates#devise)
@@ -13,7 +13,7 @@ Quickly generate a rails app using [Rails Templates](http://guides.rubyonrails.o
 - [React+Devise template](https://github.com/adesurirey/rails-templates#react-devise)
   - [React notice](https://github.com/adesurirey/rails-templates#react-notice)
 
-*Complementary setup:*
+**Complementary setup:**
 - [Testing](https://github.com/adesurirey/rails-templates#testing)
 - [Continuous integration with Wercker](https://github.com/adesurirey/rails-templates#wercker)
 - [Staging setup](https://github.com/adesurirey/rails-templates#setup-staging)
