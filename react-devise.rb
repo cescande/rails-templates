@@ -174,14 +174,14 @@ after_bundle do
 
   # Routes
   ########################################
-  route("root to: 'pages#home'")
   route(
-    "if Rails.env.development?
+    "root to: 'pages#home'
+
+    if Rails.env.development?
       mount LetterOpenerWeb::Engine, at: '/letter_opener'
-    end"
-  )
-  route(
-    "# Simple hack to get react-router over rails routes
+    end
+
+    # Simple hack to get react-router over rails routes
     # get '*path', to: 'site#index'"
   )
 
@@ -196,6 +196,9 @@ tmp/*
 *.swp
 .DS_Store
 public/assets
+/public/packs
+/public/packs-test
+/node_modules
 TXT
 
   # Annotate
