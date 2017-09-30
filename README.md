@@ -118,6 +118,7 @@ Use `foreman` to launch rails server and webpack-dev-server
 $ gem install foreman
 $ foreman start -f Procfile.dev -p 3000
 ```
+Warning: do not add foreman to your `gemfile`.
 
 Use `yarn` to add packages
 
