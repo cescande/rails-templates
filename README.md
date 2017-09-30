@@ -105,7 +105,6 @@ Same as Devise **plus** React setup.
 
 ```bash
 rails new \
-  --webpack=react \
   --database postgresql \
   -m https://raw.githubusercontent.com/adesurirey/rails-templates/master/react-devise.rb \
   CHANGE_THIS_TO_YOUR_RAILS_APP_NAME

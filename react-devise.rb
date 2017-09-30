@@ -23,6 +23,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form', github: 'elsurudo/simple_form', branch: 'rails-5.1.0'
 gem 'autoprefixer-rails'
+gem 'webpacker'
 
 group :development, :test do
   gem 'binding_of_caller'
@@ -166,6 +167,11 @@ after_bundle do
   generate('simple_form:install', '--bootstrap')
   generate(:controller, 'pages', 'home', '--no-helper', '--no-assets', '--skip-routes')
 
+  # Webpack + React
+  ########################################
+  rails webpacker:install
+  rails webpacker:install:react
+  
   # Routes
   ########################################
   route(
