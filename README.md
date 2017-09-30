@@ -9,8 +9,8 @@ Quickly generate a rails app using [Rails Templates](http://guides.rubyonrails.o
 - [Devise template with Semantic-ui](https://github.com/adesurirey/rails-templates#semantic-ui)
   - [Semantic-ui notice](https://github.com/adesurirey/rails-templates#semantic-ui-notice)
 
-- [Minimal + React template](https://github.com/adesurirey/rails-templates#react-minimal)
-- [Devise + React template](https://github.com/adesurirey/rails-templates#react-devise)
+- [Minimal + React template](https://github.com/adesurirey/rails-templates#minimal--react)
+- [Devise + React template](https://github.com/adesurirey/rails-templates#devise--react)
   - [React notice](https://github.com/adesurirey/rails-templates#react-notice)
 
 **Complementary setup:**
